@@ -51,26 +51,21 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if(escolhaUsuario == escolhaApp){
+        //Usuario ganhador
+        if(
+            ( escolhaUsuario == 0 && escolhaApp == 2 ) ||
+            ( escolhaUsuario == 1 && escolhaApp == 0 ) ||
+            ( escolhaUsuario == 2 && escolhaApp == 1 )
+        ){
+            textoResultado.setText("Você ganhou!");
+        } else if ( // App ganhador
+                ( escolhaApp == 0 && escolhaUsuario == 2 ) ||
+                ( escolhaApp == 1 && escolhaUsuario == 0 ) ||
+                ( escolhaApp == 2 && escolhaUsuario == 1 )
+        ){
+            textoResultado.setText("Você perdeu!");
+        } else {
             textoResultado.setText("Empate!");
-        } else if(escolhaUsuario == 0){
-            if(escolhaApp == 1){
-                textoResultado.setText("Você perdeu!");
-            }else{
-                textoResultado.setText("Você ganhou!");
-            }
-        } else if(escolhaUsuario == 1){
-            if(escolhaApp == 0){
-                textoResultado.setText("Você ganhou!");
-            }else{
-                textoResultado.setText("Você perdeu!");
-            }
-        } else if(escolhaUsuario == 2){
-            if(escolhaApp == 0){
-                textoResultado.setText("Você perdeu!");
-            }else{
-                textoResultado.setText("Você ganhou!");
-            }
         }
 
     }
